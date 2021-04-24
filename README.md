@@ -24,40 +24,58 @@ In this web application every Revature employee can connect to other employees, 
 
 List of features ready and TODOs for future development
 * As a user, we are able to create new accounts and login to our social media account.
-* As we are friends with all users in our app we are able to view their posts upon logging in and we are able to create new posts with images.
-* We are able to view our own profile with post we created while editing our profile information.  and all our friends profiles with their post as well.
-* We are also able to search for other user through a search bar. 
-* 
+* As we are friends with all users in our app we are able to view their posts upon logging in and we are able to create new posts and attach an image.
+* We are able to view our own profile with post we created while editing our profile information, and we are able to view our own friends profiles with their post as well.
+* We are able to search for other user through a search bar. 
+* There is a live chat where you can talk to other users logged in.
+* We are able to logout.
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Make improvements to the speed of our application as it makes to many requests/checks over http requests slowing down our application visibily. 
+* We have an issue with editing our profile information as it is not being updated correctly on the frontend side.
+* Reorgainize the layout of both the main page and profile page to be more visibily appealing. 
+* Add our logo to the frontpage.
 
 ## Getting Started
    
-(include git clone command)
-(include all environment setup steps)
+* First we need to git clone our project
+> https://github.com/hclark07/Social-Network.git
 
-> Be sure to include BOTH Windows and Unix command  
-> Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
+* Next we need to install both IntelliJ and Visual Studio Code if you have not done so yet.
+> https://www.jetbrains.com/idea/download/#section=windows
+> https://code.visualstudio.com/download
 
-- All the `code` required to get started
-- Images of what it should look like
+* Open the frontend folder in Visual Studio Code and open console with ctrl + ` 
+* Install Angular with npm install -g @angular/cli
+* Download the modules using the command npm install.
+
+* For the backend open IntelliJ and under file, new, import module from existing source, import the folder project-two with gradle. 
+* Configure a new tomcat server using Apache Tomcat/9.0.45
+* Deployment Directory set to our webapp folder in our proect
+* Context path /social
+* Server Port 9005 as that is what the project is already setup for. 
+* Your backend should be ready.
+> ![tomcat](https://user-images.githubusercontent.com/69532931/115968051-a73c9500-a4ea-11eb-8cc4-f97bdf99655d.png)
+
+
+* To start the application
+* In the command line in VS code type in ng serve -o to open the front page in a browser
+* In the backend simply run the tomcat server
 
 ## Usage
 
 * Front page of our application and also the login page
 * > ![login](https://user-images.githubusercontent.com/69532931/115947441-876e8800-a47c-11eb-87fb-b709c099aa72.png)
 
-* We can create a new user by clicking Login button
+* We can create a new user by clicking register link button.
 > ![newUSer](https://user-images.githubusercontent.com/69532931/115947462-9ce3b200-a47c-11eb-983c-ebde091578d0.png)
 
-* Once you login it navigates a user to the main page. On the top of the main page you have the nav bar while you on the body you have a global feed of all users posts. 
+* Once you login it navigates a user to the main page. On top of the main page you have the nav bar while on the body you have a global feed of all users posts. 
 > ![feed](https://user-images.githubusercontent.com/69532931/115947473-b1c04580-a47c-11eb-9f8b-0065d44d0b4c.png)
 
-* On the main page we are able to create a new post with images
-> ![image_to_post](https://user-images.githubusercontent.com/69532931/115947501-dc120300-a47c-11eb-915d-9303626870e1.png)
+* On the main page we are able to create a new post with images.
 > ![create_post](https://user-images.githubusercontent.com/69532931/115947491-d3213180-a47c-11eb-813a-67114bcc8528.png)
+> ![image_to_post](https://user-images.githubusercontent.com/69532931/115947501-dc120300-a47c-11eb-915d-9303626870e1.png)
 > ![new_post](https://user-images.githubusercontent.com/69532931/115947512-ee8c3c80-a47c-11eb-9064-290c8aba6da9.png)
 
 * You can also navigate to a profile page through the nav bar. On the profile page you have a left container containing the user's information, Current profile view posts and a friends list on the right
@@ -80,11 +98,13 @@ To-do list:
 
 * You can also navigate to a live chat room with other users currently logged in
 * Below an account named Mikey will initiate a conversation with the user we just created.
-> ![convo1](https://user-images.githubusercontent.com/69532931/115947688-29db3b00-a47e-11eb-9666-561227031562.png)
-> ![convo2](https://user-images.githubusercontent.com/69532931/115947714-55f6bc00-a47e-11eb-963c-b9f344934467.png)
-> ![convo3](https://user-images.githubusercontent.com/69532931/115947716-58591600-a47e-11eb-948c-55d5b0c83327.png)
-> ![convo4](https://user-images.githubusercontent.com/69532931/115947717-5abb7000-a47e-11eb-8c2d-c58a2d3826fc.png)
-> ![convo5](https://user-images.githubusercontent.com/69532931/115947718-5c853380-a47e-11eb-841e-cabb0a54e3a0.png)
+> ![convo1](https://user-images.githubusercontent.com/69532931/115968434-dc49e700-a4ec-11eb-8afe-781364bdd9cd.png)
+> ![convo2](https://user-images.githubusercontent.com/69532931/115968437-e10e9b00-a4ec-11eb-8d9a-665570bcfb60.png)
+> ![convo3](https://user-images.githubusercontent.com/69532931/115968441-e370f500-a4ec-11eb-9cff-0f4e1ce7dca0.png)
+> ![convo4](https://user-images.githubusercontent.com/69532931/115968444-e5d34f00-a4ec-11eb-80bb-cb727b66255a.png)
+> ![convo5](https://user-images.githubusercontent.com/69532931/115968447-e79d1280-a4ec-11eb-9d03-f71ae171b342.png)
+> ![convo6](https://user-images.githubusercontent.com/69532931/115968448-e8ce3f80-a4ec-11eb-93f4-4f3c1ce705a8.png)
+
 
 * We can logout by clicking the logout button in the nav bar. Upon logging out if a user forgets their password. Red text will appear letting users know their login information is incorrect. 
 > ![warning](https://user-images.githubusercontent.com/69532931/115947765-cd2c5000-a47e-11eb-8a0b-c1d22da352bb.png)
@@ -96,8 +116,8 @@ To-do list:
 
 ## Contributors
 
-> Corey Schink
-> Michael DeGennaro
-> Erik Williams
+* Corey Schink
+* Michael DeGennaro
+* Erik Williams
 
 
