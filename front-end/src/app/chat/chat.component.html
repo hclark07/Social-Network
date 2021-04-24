@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="chat">
+  <div class="container">
+    <div class="chat-content">
+      <div class="card">
+        <ul class="list-group list-group-flush fb">
+          <li class="list-group-item list-group-item-warning date">
+            {{ date }}
+          </li>
+          <li
+            *ngFor="let message of webSocketService.chatMessages"
+            [class]="
+              user === message.user
+                ? 'list-group-item list-group-item-info self '
+                : 'list-group-item list-group-item-success other'
+            "
+          >
+            <strong *ngIf="message.user != user">{{ message.user }} </strong>
+            <span> {{ message.message }} </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+      <div class="class-send row">
+        <div class="col-10">
+          <input
+            type="text"
+            rows="3"
+            class="form-control"
+            name="message"
+            id="input-message"
+            ngModel
+          />
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

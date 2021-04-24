@@ -1,0 +1,23 @@
+.input-group {
+  position: relative;
+}
+
+#dropdown {
+  background-color: white;
+  border: 0.2px solid #cbd6ce;
+  border-radius: 3px;
+  width: 100%;
+  position: absolute;
+  top: 38px;
+  z-index: 500;
+}
+
+a {
+  color: black;
+}
+
+#frank {
+  object-fit: cover;
+  width: 200px;
+  height: 35px;
+}

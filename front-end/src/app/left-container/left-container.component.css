@@ -1,0 +1,13 @@
+.user-pic > img{
+    float: none;
+    width: 100%;
+    /* border: 5px solid salmon */
+}
+
+.leftContainer {
+    float:left
+}
+
+.rightContainer{
+    float:right
+}

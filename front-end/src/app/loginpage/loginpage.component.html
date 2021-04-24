@@ -1,0 +1,51 @@
+
+
+   <div class="center text-center customborder custompadding bgwhite">
+
+    <p class="h4 mb-4">User Login</p>
+
+      <input
+        type="email"
+        id="email"
+        class="form-control mb-4"
+        placeholder="name@example.com"
+        [(ngModel)]="emailField"
+      />
+
+
+      <input
+        type="password"
+        id="password"
+        class="form-control mb-4"
+        placeholder="Password"
+        [(ngModel)]="passwordField"
+      />
+
+
+    <div class="d-flex justify-content-around">
+      <div>
+        <!-- Remember me -->
+        <p>Remember me</p>
+      </div>
+      <div>
+        <!-- Forgot password -->
+        <a routerLink="/forgotPassword" routerLinkActive="active">Forgot password?</a>
+      </div>
+    </div>
+    <p *ngIf="display" id="display">Login failed, please try again.</p>
+
+      
+        <button (click)="loginButton()" class="form-control mb-4 btn-primary" type="button">
+          Login
+        </button>
+      
+
+
+      <p>Not a member?
+        <a routerLink="/new-user"
+        routerLinkActive="active">Register</a>
+      </p>
+</div>
+
+
+ 

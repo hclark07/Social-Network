@@ -1,0 +1,49 @@
+.chat {
+    margin-top: 2rem;
+}
+
+
+div.chat-content{
+    border-radius: .25rem;
+    height: 40rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    opacity: .8;
+    height: 100%;
+    overflow:scroll;
+}
+
+.fb {
+    display: inline-flex;
+
+}
+
+.self{
+    /* margin: 0 1rem; */
+    list-style: none;
+    align-self:flex-end;
+    border-radius: .25rem;
+    margin-right: 2rem;
+    margin-top: .25rem;
+}
+
+.other{
+    list-style: none;
+    align-self:flex-start;
+    border-radius: .25rem;
+    margin-left: .25rem;
+    margin-top: .25rem;
+}
+
+.date{
+    list-style: none;
+    align-self:center;
+    border-radius: .25rem;
+    margin-left: .25rem;
+    margin-top: .25rem;
+}
+
+

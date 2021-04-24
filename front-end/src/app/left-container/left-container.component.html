@@ -1,0 +1,26 @@
+
+
+            <div class="card-body">
+                <div class="user-pic"><img src='{{user?.avatar}}' alt="{{user?.username}}"></div>
+                <div class="h5">@{{user?.username}}</div>
+                <div class="h7 text-muted">Fullname : {{user?.fname}} {{user?.lname}}</div>
+                <div class="h7">{{user?.userDescription}}
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="h6 text-muted">Friends</div>
+                    <div class="h5">{{userFriends?.length-1}}</div>
+                </li>
+                <div>
+                    <div>
+                        <!-- <li class="list-group-item leftContainer"><a routerLink='/profile/{{user?.username}}/{{user.userId}}'>View Profile</a></li> -->
+                    </div>
+                    <div>
+                        <li class="list-group-item rightContainer"><a routerLink='/update-user'>Edit Profile</a></li>
+                    </div>
+                    
+                </div>
+                
+            </ul>
+

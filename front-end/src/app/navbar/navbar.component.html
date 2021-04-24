@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-white">
+
+
+    <a routerLink = '/main' class="navbar-brand"><img id="frank" src="../assets/frankly.png"></a>
+    <a routerLink = '/chat' class="navbar-brand">Chat</a>
+    <a class="navbar-brand" routerLink="/profile/{{user?.username}}/{{user?.userId}}" routerLinkActive="active">My Profile</a>
+    <a routerLink = '' class="navbar-brand">Logout</a>
+
+
+    <form class="form-inline">
+        <div class="input-group">
+            <input type="text" #myInput class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" (input)="filterItem(myInput.value)">
+
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button" id="button-addon2">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        <br>
+            <div id='dropdown'>
+                <div id='inner-dropdown' *ngFor="let item of filteredItems"><a routerLink='/profile/{{item.username}}/{{item.userId}}'>{{item.username}}</a></div>
+            </div>
+        </div>
+    </form>
+
+    
+</nav>

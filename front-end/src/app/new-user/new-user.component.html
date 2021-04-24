@@ -1,0 +1,58 @@
+
+<div id="mainContainer" class="center text-center customborder custompadding bgwhite">
+
+  <p class="h4 mb-1">Welcome new User!</p>
+  <p class="h4 mb-4">Lets create a new account</p>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <input
+      type="email"
+      id="email"
+      class="form-control mb-4"
+      placeholder="name@example.com"
+      formControlName="email" required
+    />
+
+
+    <input
+      type="text"
+      id="username"
+      class="form-control mb-4"
+      placeholder="Username"
+      formControlName="username" required
+    />
+
+    <input
+      type="password"
+      id="password"
+      class="form-control mb-4"
+      placeholder="Password"
+      formControlName="password" required
+    />
+
+    <input
+      type="text"
+      id="fname"
+      class="form-control mb-4"
+      placeholder="First Name"
+      formControlName="firstName" required
+    />
+
+    <input
+      type="text"
+      id="lname"
+      class="form-control mb-4"
+      placeholder="Last Name"
+      formControlName="lastName" required
+    />
+
+  </form>
+    
+      <button (click)="onSubmit()" class="form-control mb-1 btn-success" type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+      <button routerLink="/" routerLinkActive="active" class="form-control mb-2 btn btn-primary" type="button">
+        Back
+      </button>
+
+</div>

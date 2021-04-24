@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-image: url("https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+main {
+  position: relative;
+}
+
+.center {
+  margin: auto;
+  margin-top: 15%;
+  margin-bottom: 10%;
+  width: 30%;
+  border-style: groove;
+  border-color: white;
+  border-radius: 10px;
+  border-width: 2px;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  overflow-y: auto;
+}
+
+.black {
+  color: black;
+}
+
+/* .bgwhite {
+    background-color:white;
+  } */
+
+.custompadding {
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+}
+
+.customborder {
+  border: black solid;
+  border-width: 0.005rem;
+}
+
+.center {
+  background-color: rgba(255, 255, 255, 0.411);
+}
+
+@media screen and (max-width: 960px) {
+  .center {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 660px) {
+  .center {
+    width: 70%;
+  }
+}
+
+.customborder {
+  border: black solid;
+  border-width: 0.005rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255);
+}

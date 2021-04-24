@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid gedf-wrapper">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <app-left-container></app-left-container>
+            </div>
+        </div>
+
+        <div class="col-md-6 gedf-main">
+
+            <!-- <app-new-post></app-new-post> -->
+
+
+            <!--- \\\\\\\Post-->
+            <div *ngFor="let post of allPosts">
+                <div *ngIf="id == post.userId.userId" class="card gedf-card mt-2">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width="45" src="{{post.userId.avatar}}" alt="">
+                                </div>
+                                <div class="ml-2">
+                                    <div class="h5 m-0"><a
+                                            routerLink='/profile/{{post.userId.username}}/{{post.userId.userId}}'>@{{post.userId.username}}</a>
+                                    </div>
+                                    <div class="h7 text-muted">{{post.userId.fname}} {{post.userId.lname}}</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="dropdown">
+                                    <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                        <div class="h6 dropdown-header">Configuration</div>
+                                        <a class="dropdown-item" href="#">Save</a>
+                                        <a class="dropdown-item" href="#">Hide</a>
+                                        <a class="dropdown-item" href="#">Report</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+    <div  class="card-body">
+        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{post.submitted | date :  "MM.dd.y" }}</div>
+            
+        <div class="container">
+            <div class = "row">
+                <div class = "col-sm" *ngIf="post.media">
+                    <img *ngIf="post.media == 'photo'" width=100% height="auto" [id]="'image_'+post.postId" 
+                    class="postImage" (click)="openModal(post.postId)"
+                    [src]="'https://rev-p2-socialmedia-2102.s3.us-east-2.amazonaws.com/post_'+post.postId" alt="post image">
+                </div>
+                <div class = "col-sm">
+                    <p class="card-text">
+                        {{post.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button (click) = "likePost(post)" type="button" class="btn btn-primary">
+            Like <span class="badge badge-pill badge-primary">{{post.users.length}}</span>
+            <span class="sr-only">Likes</span>
+          </button>
+        <!-- <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a> -->
+    </div>
+</div>
+
+
+        </div>
+        </div>
+
+        <div class="col-md-3">
+            <div *ngFor="let friend of userFriends">
+                <div *ngIf="!(id == friend.userId)" class="card centerbox gedf-card" [style.width.px] ="250">
+                <div class="card-body">
+                    <div class="cardbox-heading">
+                        <!-- START dropdown-->
+                        <div class="dropdown float-right media-body">
+                            <p><a routerLink="/profile/{{friend.username}}/{{friend.userId}}" routerLinkActive="active">View Profile</a></p>
+                        </div>
+                        <!--/ dropdown -->
+                        <div class="media m-0">
+                            <div class="media-body">
+                                <p class="m-0">{{friend.username}}</p>
+                                <small><span><i class="icon ion-md-pin"></i> {{friend.fname}} {{friend.lname}}</span></small>
+                                <!-- <small><span><i class="icon ion-md-time"></i> 10 hours ago</span></small> -->
+                            </div>
+                        </div>
+                        <!--/ media -->
+                    </div>
+                    <!--/ cardbox-heading -->
+          
+                    <div class="cardbox-item">
+                        <img class="img-fluid" src="{{friend.avatar}}" 
+                            alt="{{friend.username}}">
+                    </div>
+                    <!--/ cardbox-item -->
+                </div>
+            </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+<!-- modal content -->
+<div id="postModal" class="modal">
+    <!-- The Close Button -->
+    <span class="close" (click) = "closeModal()">&times;</span>
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="floatingImg">
+</div>
